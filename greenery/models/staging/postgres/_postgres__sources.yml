@@ -1,0 +1,15 @@
+version: 2
+
+sources:
+
+  - name: postgres
+    schema: public # this is the schema our raw data lives in
+    database: raw # this is the name of our database
+    tables: 
+      - name: users 
+      - name: events 
+      - name: orders 
+      - name: order_items
+      - name: promos
+      - name: products
+      - name: addresses 
