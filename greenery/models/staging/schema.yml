@@ -1,0 +1,68 @@
+
+
+version: 2
+
+models:
+  - name: stg_postgres__adresses
+    description: "Staging model for user adress table"
+    columns:
+      - name: address_id
+        description: "The primary key for this table"
+        tests:
+          - unique
+          - not_null
+
+
+  - name: stg_postgres__events
+    description: "A staging model for raw events table"
+    columns:
+      - name: event_id
+        description: "The primary key for this table"
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_postgres__order_items
+    description: "A staging model for table listing items in a user's order"
+    columns:
+      - name: order_item_id
+        description: "The primary key for this table"
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_postgres__orders
+    description: "A staging model for orders table"
+    columns:
+      - name: order_id
+        description: "The primary key for this table, generated"
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_postgres__products
+    description: "A staging model for the products table"
+    columns:
+      - name: product_id
+        description: "The primary key for this table"
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_postgres__promos
+    description: "A staging model for the promos table"
+    columns:
+      - name: promo_name
+        description: "Promo name; The primary key for this table"
+        tests:
+          - unique
+          - not_null        
+
+  - name: stg_postgres__users
+    description: "A staging model for the users table"
+    columns:
+      - name: user_id
+        description: "The primary key for this table"
+        tests:
+          - unique
+          - not_null  
