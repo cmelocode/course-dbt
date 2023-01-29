@@ -1,0 +1,11 @@
+version: 2
+
+models:
+  - name: fact_user_orders
+    description: order facts at the user level
+    columns:
+      - name: user_id
+        description: user_id
+        tests:
+          - unique
+          - not_null

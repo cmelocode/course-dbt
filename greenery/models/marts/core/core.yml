@@ -1,0 +1,39 @@
+version: 2
+
+models:
+  - name: dim_users
+    description: basic user info 
+    columns:
+      - name: user_id
+        description: user_id
+        tests:
+          - unique
+          - not_null
+
+  - name: fact_orders
+    description: basic order info 
+    columns:
+      - name: order_id
+        description: order_id
+        tests:
+          - unique
+          - not_null
+
+      - name: user_id
+        tests:
+          - relationships:
+              to: ref('dim_users')
+              field: user_id
+              
+      - name: is_late_delivery
+        description: Boolean to indicate if order delivered after the estimate delivery date 
+        tests: 
+          - accepted_values: 
+              values: [True, False]
+
+      - name: total_hours_to_delivery
+        description: total hours from order date to delivery date 
+  
+      - name: is_promo_order
+        description: A promo was applied to this order. 
+ 
