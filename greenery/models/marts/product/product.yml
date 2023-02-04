@@ -9,3 +9,12 @@ models:
         tests:
           - unique
           - not_null
+
+  - name: fact_product_sessions
+    description: Session facts at th product level
+    columns:
+      - name: product_id
+        description: product_id
+        tests:
+          - unique
+          - not_null
